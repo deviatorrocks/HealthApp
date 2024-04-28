@@ -158,10 +158,10 @@
 		9B1BBF3B2BDB6BB7008AA08E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9B1BBF482BDB6EBD008AA08E /* ImageServiceProtocol.swift */,
 				9B1BBF432BDB6E0B008AA08E /* Utilities */,
 				9B1BBF3E2BDB6CA4008AA08E /* Models */,
 				9B1BBF3C2BDB6BCC008AA08E /* ImageService.swift */,
-				9B1BBF482BDB6EBD008AA08E /* ImageServiceProtocol.swift */,
 				9B1BBF4A2BDB6FBF008AA08E /* NetworkError.swift */,
 				9B99004A2BDBFC260098E149 /* ImageLoadOperation.swift */,
 				9B99004C2BDBFC4D0098E149 /* ImageLoader.swift */,

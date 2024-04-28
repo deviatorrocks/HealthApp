@@ -6,7 +6,6 @@
 //
 
 import Foundation
-//"https://your-api-url.com/images/0/\(imageKey)"
 
 final class ImageListViewModel {
     private let imageService: ImageServiceProtocol

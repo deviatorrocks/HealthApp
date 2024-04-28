@@ -7,12 +7,11 @@
 
 import UIKit
 
-class ImageListViewController: UIViewController {
+final class ImageListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 0.5, bottom: 0.0, right: 0.0)
     var viewModel: ImageListViewModel!
-    // Your existing properties and outlets...
     let imageLoader = ImageLoader()
 
     override func viewDidLoad() {
@@ -57,7 +56,6 @@ extension ImageListViewController: UICollectionViewDataSource, UICollectionViewD
             imageLoader: imageLoader,
             imageKey: viewModel.fetchImageKey(index: indexPath.row),
             url: viewModel.formImageUrl(index: indexPath.row) as String)
-        print("Index in table view count: \(indexPath.row)")
         return cell
     }
 }
@@ -75,10 +73,14 @@ extension ImageListViewController: UICollectionViewDataSourcePrefetching {
             }
             
             imageLoader.loadImage(imageKey: imageKey, from: URL(string: imageURL as String)!) { image in
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
+                    guard let strongSelf = self else { return }
                     // Reload the corresponding cell to display the image
                     if let cell = collectionView.cellForItem(at: indexPath) as? ImageCell {
-                        cell.imageView.image = image
+                        cell.configureUI(
+                            imageLoader: strongSelf.imageLoader,
+                            imageKey: imageKey,
+                            url: imageURL as String)
                     }
                 }
             }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageCell: UICollectionViewCell {
+final class ImageCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     
     func configureUI(imageLoader: ImageLoader, imageKey: String, url: String) {

@@ -38,7 +38,6 @@ extension UIImage {
         if let data = asJPEG ? self.jpegData(compressionQuality: compressionQuality) : self.pngData() {
             return data
         } else {
-            // Handle case where data could not be generated
             return nil
         }
     }
