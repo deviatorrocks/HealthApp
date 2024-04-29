@@ -65,6 +65,7 @@
 		9B10E3A82BDF7DA100410DDF /* DiskCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCacheTests.swift; sourceTree = "<group>"; };
 		9B10E3AA2BDF7DEB00410DDF /* ImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheTests.swift; sourceTree = "<group>"; };
 		9B10E3AC2BDF7EF000410DDF /* UIImageExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensionTests.swift; sourceTree = "<group>"; };
+		9B1615472BDFA7410091B37D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		9B1BBF082BDB6B75008AA08E /* HealthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B1BBF0B2BDB6B75008AA08E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B1BBF0D2BDB6B75008AA08E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 		9B1BBF0A2BDB6B75008AA08E /* HealthApp */ = {
 			isa = PBXGroup;
 			children = (
+				9B1615472BDFA7410091B37D /* README.md */,
 				9B1BBF422BDB6CE4008AA08E /* ViewModel */,
 				9B1BBF412BDB6CD4008AA08E /* Views */,
 				9B1BBF3B2BDB6BB7008AA08E /* Services */,
