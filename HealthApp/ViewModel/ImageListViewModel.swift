@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ImageListViewModel {
+class ImageListViewModel {
     private let imageService: ImageServiceProtocol
     var imageKeys: [DetailItem] = []
     

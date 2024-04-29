@@ -7,12 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B10E39C2BDF6C4200410DDF /* Alertview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B10E39B2BDF6C4200410DDF /* Alertview.swift */; };
+		9B10E39E2BDF6DBF00410DDF /* ImageListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B10E39D2BDF6DBF00410DDF /* ImageListViewModelTests.swift */; };
+		9B10E3A12BDF791600410DDF /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9900482BDB87E20098E149 /* ImageCell.xib */; };
+		9B10E3A22BDF7A0900410DDF /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BBF4E2BDB7223008AA08E /* ImageCell.swift */; };
+		9B10E3A32BDF7A3300410DDF /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99004C2BDBFC4D0098E149 /* ImageLoader.swift */; };
+		9B10E3A42BDF7A4600410DDF /* ImageLoadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99004A2BDBFC260098E149 /* ImageLoadOperation.swift */; };
+		9B10E3A52BDF7A4A00410DDF /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99004E2BDBFC9A0098E149 /* ImageCache.swift */; };
+		9B10E3A62BDF7A4C00410DDF /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9900502BDC174B0098E149 /* DiskCache.swift */; };
+		9B10E3A72BDF7A6C00410DDF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9900462BDB83B00098E149 /* UIImage+Extension.swift */; };
+		9B10E3A92BDF7DA100410DDF /* DiskCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B10E3A82BDF7DA100410DDF /* DiskCacheTests.swift */; };
+		9B10E3AB2BDF7DEB00410DDF /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B10E3AA2BDF7DEB00410DDF /* ImageCacheTests.swift */; };
+		9B10E3AD2BDF7EF000410DDF /* UIImageExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B10E3AC2BDF7EF000410DDF /* UIImageExtensionTests.swift */; };
 		9B1BBF0C2BDB6B75008AA08E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BBF0B2BDB6B75008AA08E /* AppDelegate.swift */; };
 		9B1BBF0E2BDB6B75008AA08E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BBF0D2BDB6B75008AA08E /* SceneDelegate.swift */; };
 		9B1BBF132BDB6B75008AA08E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B1BBF112BDB6B75008AA08E /* Main.storyboard */; };
 		9B1BBF152BDB6B7B008AA08E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B1BBF142BDB6B7B008AA08E /* Assets.xcassets */; };
 		9B1BBF182BDB6B7B008AA08E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B1BBF162BDB6B7B008AA08E /* LaunchScreen.storyboard */; };
-		9B1BBF232BDB6B7B008AA08E /* HealthAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BBF222BDB6B7B008AA08E /* HealthAppTests.swift */; };
 		9B1BBF2D2BDB6B7B008AA08E /* HealthAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BBF2C2BDB6B7B008AA08E /* HealthAppUITests.swift */; };
 		9B1BBF2F2BDB6B7B008AA08E /* HealthAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BBF2E2BDB6B7B008AA08E /* HealthAppUITestsLaunchTests.swift */; };
 		9B1BBF3D2BDB6BCC008AA08E /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BBF3C2BDB6BCC008AA08E /* ImageService.swift */; };
@@ -49,6 +60,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B10E39B2BDF6C4200410DDF /* Alertview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertview.swift; sourceTree = "<group>"; };
+		9B10E39D2BDF6DBF00410DDF /* ImageListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewModelTests.swift; sourceTree = "<group>"; };
+		9B10E3A82BDF7DA100410DDF /* DiskCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCacheTests.swift; sourceTree = "<group>"; };
+		9B10E3AA2BDF7DEB00410DDF /* ImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheTests.swift; sourceTree = "<group>"; };
+		9B10E3AC2BDF7EF000410DDF /* UIImageExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensionTests.swift; sourceTree = "<group>"; };
 		9B1BBF082BDB6B75008AA08E /* HealthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B1BBF0B2BDB6B75008AA08E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B1BBF0D2BDB6B75008AA08E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +73,6 @@
 		9B1BBF172BDB6B7B008AA08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B1BBF192BDB6B7B008AA08E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B1BBF1E2BDB6B7B008AA08E /* HealthAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B1BBF222BDB6B7B008AA08E /* HealthAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAppTests.swift; sourceTree = "<group>"; };
 		9B1BBF282BDB6B7B008AA08E /* HealthAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B1BBF2C2BDB6B7B008AA08E /* HealthAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAppUITests.swift; sourceTree = "<group>"; };
 		9B1BBF2E2BDB6B7B008AA08E /* HealthAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -141,7 +156,10 @@
 		9B1BBF212BDB6B7B008AA08E /* HealthAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				9B1BBF222BDB6B7B008AA08E /* HealthAppTests.swift */,
+				9B10E39D2BDF6DBF00410DDF /* ImageListViewModelTests.swift */,
+				9B10E3A82BDF7DA100410DDF /* DiskCacheTests.swift */,
+				9B10E3AA2BDF7DEB00410DDF /* ImageCacheTests.swift */,
+				9B10E3AC2BDF7EF000410DDF /* UIImageExtensionTests.swift */,
 			);
 			path = HealthAppTests;
 			sourceTree = "<group>";
@@ -185,6 +203,7 @@
 				9B1BBF4C2BDB71D8008AA08E /* ImageListViewController.swift */,
 				9B1BBF4E2BDB7223008AA08E /* ImageCell.swift */,
 				9B9900482BDB87E20098E149 /* ImageCell.xib */,
+				9B10E39B2BDF6C4200410DDF /* Alertview.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -321,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B10E3A12BDF791600410DDF /* ImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +371,7 @@
 				9B9900472BDB83B00098E149 /* UIImage+Extension.swift in Sources */,
 				9B1BBF452BDB6E19008AA08E /* Constants.swift in Sources */,
 				9B99004F2BDBFC9A0098E149 /* ImageCache.swift in Sources */,
+				9B10E39C2BDF6C4200410DDF /* Alertview.swift in Sources */,
 				9B99004D2BDBFC4D0098E149 /* ImageLoader.swift in Sources */,
 				9B9900512BDC174B0098E149 /* DiskCache.swift in Sources */,
 			);
@@ -360,7 +381,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B1BBF232BDB6B7B008AA08E /* HealthAppTests.swift in Sources */,
+				9B10E39E2BDF6DBF00410DDF /* ImageListViewModelTests.swift in Sources */,
+				9B10E3A92BDF7DA100410DDF /* DiskCacheTests.swift in Sources */,
+				9B10E3A62BDF7A4C00410DDF /* DiskCache.swift in Sources */,
+				9B10E3A22BDF7A0900410DDF /* ImageCell.swift in Sources */,
+				9B10E3A72BDF7A6C00410DDF /* UIImage+Extension.swift in Sources */,
+				9B10E3A32BDF7A3300410DDF /* ImageLoader.swift in Sources */,
+				9B10E3AB2BDF7DEB00410DDF /* ImageCacheTests.swift in Sources */,
+				9B10E3A42BDF7A4600410DDF /* ImageLoadOperation.swift in Sources */,
+				9B10E3AD2BDF7EF000410DDF /* UIImageExtensionTests.swift in Sources */,
+				9B10E3A52BDF7A4A00410DDF /* ImageCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

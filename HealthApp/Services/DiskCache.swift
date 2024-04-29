@@ -21,7 +21,7 @@ class DiskCache {
     
     func getCacheFileURL(imageKey: String) -> URL {
         let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
-        print(documentsDirectory)
+        //print(documentsDirectory)
         return documentsDirectory.appendingPathComponent(imageKey)
     }
 }

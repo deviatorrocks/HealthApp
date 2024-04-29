@@ -16,20 +16,27 @@ final class ImageListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         collectionView.register(UINib(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "ImageCell")
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.prefetchDataSource = self
         
+        fetchData()
+    }
+    
+    func fetchData() {
         viewModel = ImageListViewModel(imageService: ImageService())
         viewModel.fetchImageKeys { [weak self] error in
             guard let self = self else { return }
-            if let error = error {
-                print("Error fetching image keys: \(error.localizedDescription)")
+            if let _ = error {
+                AlertView.showAlert(
+                    title: "Network issue",
+                    message: "Please try again",
+                    viewController: self)
             } else {
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
+                DispatchQueue.main.async { [weak self] in
+                    self?.collectionView.reloadData()
                 }
             }
         }
@@ -40,8 +47,7 @@ extension ImageListViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // In this function is the code you must implement to your code project if you want to change size of Collection view
-        let width  = (view.frame.width-20)/3
+        let width  = ((view.frame.width) - Constants.offset) / Constants.itemsPerRow
         return CGSize(width: width, height: width)
     }
     
@@ -52,38 +58,35 @@ extension ImageListViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCell
         
-        cell.configureUI(
-            imageLoader: imageLoader,
-            imageKey: viewModel.fetchImageKey(index: indexPath.row),
-            url: viewModel.formImageUrl(index: indexPath.row) as String)
+        if collectionView.isDragging == false, collectionView.isDecelerating == false {
+            cell.configureUI(
+                imageLoader: imageLoader,
+                imageKey: viewModel.fetchImageKey(index: indexPath.row),
+                url: viewModel.formImageUrl(index: indexPath.row) as String)
+        } else {
+            cell.configurePlaceholderImage()
+        }
         return cell
     }
-}
-
-extension ImageListViewController: UICollectionViewDataSourcePrefetching {
-    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            let imageURL = viewModel.formImageUrl(index: indexPath.row)
-            let imageKey = viewModel.fetchImageKey(index: indexPath.row)
-            
-            // Check if the image is already cached
-            if ImageCache.shared.image(for: imageKey) != nil {
-                // Image is already cached, no need to prefetch
-                continue
-            }
-            
-            imageLoader.loadImage(imageKey: imageKey, from: URL(string: imageURL as String)!) { image in
-                DispatchQueue.main.async { [weak self] in
-                    guard let strongSelf = self else { return }
-                    // Reload the corresponding cell to display the image
-                    if let cell = collectionView.cellForItem(at: indexPath) as? ImageCell {
-                        cell.configureUI(
-                            imageLoader: strongSelf.imageLoader,
-                            imageKey: imageKey,
-                            url: imageURL as String)
-                    }
-                }
-            }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            loadImages()
+        }
+    }
+        
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        loadImages()
+    }
+    
+    func loadImages() {
+        let visibleIndexPaths = collectionView.indexPathsForVisibleItems
+        for indexPath in visibleIndexPaths {
+            guard let cell = collectionView.cellForItem(at: indexPath) as? ImageCell else { continue }
+            cell.configureUI(
+                imageLoader: imageLoader,
+                imageKey: viewModel.fetchImageKey(index: indexPath.row),
+                url: viewModel.formImageUrl(index: indexPath.row) as String)
         }
     }
 }

@@ -20,8 +20,9 @@ class ImageLoadOperation: Operation {
         if isCancelled { return }
         
         guard let data = try? Data(contentsOf: url) else { return }
-        if isCancelled { return }
-        
+        if isCancelled {
+            return
+        }
         image = UIImage(data: data)
     }
 }
